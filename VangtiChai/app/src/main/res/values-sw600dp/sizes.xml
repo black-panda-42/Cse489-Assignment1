@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dimension overrides for tablet screens (sw600dp and above, e.g. Nexus 10).
+    These values scale up text, padding, and button sizes for comfortable tablet use.
+-->
+<resources>
+    <!-- Text sizes -->
+    <dimen name="taka_text_size">36sp</dimen>
+    <dimen name="notes_text_size">24sp</dimen>
+    <dimen name="keypad_text_size">28sp</dimen>
+
+    <!-- Layout margins / padding -->
+    <dimen name="layout_margin">24dp</dimen>
+    <dimen name="label_margin_bottom">24dp</dimen>
+    <dimen name="key_margin">6dp</dimen>
+    <dimen name="note_item_padding">10dp</dimen>
+    <dimen name="notes_padding_end">16dp</dimen>
+    <dimen name="key_padding">18dp</dimen>
+
+    <!-- Component dimensions -->
+    <dimen name="key_height">76dp</dimen>
+</resources>

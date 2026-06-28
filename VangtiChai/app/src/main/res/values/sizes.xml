@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dimension values for phone screens (default / < sw600dp).
+    All layout XML files must reference these instead of hardcoding values.
+-->
+<resources>
+    <!-- Text sizes -->
+    <dimen name="taka_text_size">26sp</dimen>
+    <dimen name="notes_text_size">16sp</dimen>
+    <dimen name="keypad_text_size">20sp</dimen>
+
+    <!-- Layout margins / padding -->
+    <dimen name="layout_margin">12dp</dimen>
+    <dimen name="label_margin_bottom">12dp</dimen>
+    <dimen name="key_margin">3dp</dimen>
+    <dimen name="note_item_padding">5dp</dimen>
+    <dimen name="notes_padding_end">8dp</dimen>
+    <dimen name="key_padding">10dp</dimen>
+
+    <!-- Component dimensions -->
+    <dimen name="key_height">52dp</dimen>
+</resources>
