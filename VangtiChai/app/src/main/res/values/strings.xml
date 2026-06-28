@@ -4,8 +4,8 @@
     <string name="clear_button">CLEAR</string>
 
     <!-- Format strings used in MainActivity.updateUI() -->
-    <!-- %1$d = amount entered, shown as "Taka: 688" -->
-    <string name="taka_display">Taka: %1$d</string>
-    <!-- %1$d = denomination, %2$d = count, shown as "500: 1" -->
-    <string name="note_display">%1$d: %2$d</string>
+    <!-- %1$s = amount entered, shown as "Taka: 688" -->
+    <string name="taka_display">Taka: %1$s</string>
+    <!-- %1$s = denomination, %2$s = count, shown as "500: 1" -->
+    <string name="note_display">%1$s: %2$s</string>
 </resources>

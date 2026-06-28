@@ -136,17 +136,17 @@ class MainActivity : AppCompatActivity() {
     // ── UI update ───────────────────────────────────────────────────────────
 
     private fun updateUI() {
-        tvTakaAmount.text = getString(R.string.taka_display, enteredAmount)
+        tvTakaAmount.text = getString(R.string.taka_display, enteredAmount.toString())
 
         val change = calculateChange(enteredAmount)
-        tvNote500.text = getString(R.string.note_display, 500, change[500] ?: 0L)
-        tvNote100.text = getString(R.string.note_display, 100, change[100] ?: 0L)
-        tvNote50.text  = getString(R.string.note_display, 50,  change[50]  ?: 0L)
-        tvNote20.text  = getString(R.string.note_display, 20,  change[20]  ?: 0L)
-        tvNote10.text  = getString(R.string.note_display, 10,  change[10]  ?: 0L)
-        tvNote5.text   = getString(R.string.note_display, 5,   change[5]   ?: 0L)
-        tvNote2.text   = getString(R.string.note_display, 2,   change[2]   ?: 0L)
-        tvNote1.text   = getString(R.string.note_display, 1,   change[1]   ?: 0L)
+        tvNote500.text = getString(R.string.note_display, "500", (change[500] ?: 0L).toString())
+        tvNote100.text = getString(R.string.note_display, "100", (change[100] ?: 0L).toString())
+        tvNote50.text  = getString(R.string.note_display, "50",  (change[50]  ?: 0L).toString())
+        tvNote20.text  = getString(R.string.note_display, "20",  (change[20]  ?: 0L).toString())
+        tvNote10.text  = getString(R.string.note_display, "10",  (change[10]  ?: 0L).toString())
+        tvNote5.text   = getString(R.string.note_display, "5",   (change[5]   ?: 0L).toString())
+        tvNote2.text   = getString(R.string.note_display, "2",   (change[2]   ?: 0L).toString())
+        tvNote1.text   = getString(R.string.note_display, "1",   (change[1]   ?: 0L).toString())
     }
 
     // ── Companion ───────────────────────────────────────────────────────────
