@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dimension values for phone portrait (default).
+    All sizes defined here — NO hardcoded dp/sp values in layout XML files.
+-->
+<resources>
+    <!-- Screen padding -->
+    <dimen name="screen_padding">8dp</dimen>
+
+    <!-- Amount display -->
+    <dimen name="amount_label_size">20sp</dimen>
+    <dimen name="amount_value_size">28sp</dimen>
+    <dimen name="amount_padding_end">8dp</dimen>
+
+    <!-- Dividers -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin_top">4dp</dimen>
+
+    <!-- Change table -->
+    <dimen name="table_header_size">13sp</dimen>
+    <dimen name="table_header_padding_v">4dp</dimen>
+    <dimen name="table_row_text_size">14sp</dimen>
+
+    <!-- Keypad buttons -->
+    <dimen name="keypad_text_size">18sp</dimen>
+    <dimen name="keypad_clear_text_size">14sp</dimen>
+    <dimen name="btn_margin">3dp</dimen>
+</resources>

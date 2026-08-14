@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compact dimensions for phone landscape -->
+    <dimen name="screen_padding">8dp</dimen>
+    <dimen name="amount_label_size">18sp</dimen>
+    <dimen name="amount_value_size">22sp</dimen>
+    <dimen name="amount_padding_end">8dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin_top">4dp</dimen>
+    <dimen name="table_header_size">14sp</dimen>
+    <dimen name="table_header_padding_v">2dp</dimen>
+    <dimen name="table_row_text_size">13sp</dimen>
+    <dimen name="keypad_text_size">18sp</dimen>
+    <dimen name="btn_margin">2dp</dimen>
+    <dimen name="keypad_clear_text_size">14sp</dimen>
+</resources>

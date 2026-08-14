@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Landscape layout for phone.
+    Left: Change table split into two columns (500,100,50,20 on left, 10,5,2,1 on right)
+    Right: Numeric keypad (4 cols x 3 rows)
+    Top: Entered amount display (centered)
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:padding="@dimen/screen_padding">
+
+    <!-- ==================== AMOUNT DISPLAY ==================== -->
+    <TextView
+        android:id="@+id/tv_taka_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_taka"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/amount_label_size"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/divider_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_amount"
+        app:layout_constraintHorizontal_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/amount_value_size"
+        android:fontFamily="sans-serif-light"
+        android:paddingStart="8dp"
+        android:maxLines="1"
+        android:ellipsize="start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/divider_top"
+        app:layout_constraintStart_toEndOf="@id/tv_taka_label"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Divider below amount -->
+    <View
+        android:id="@+id/divider_top"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/divider_color"
+        android:layout_marginTop="@dimen/divider_margin_top"
+        app:layout_constraintTop_toBottomOf="@id/tv_taka_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Vertical divider between table (left) and keypad (right) -->
+    <View
+        android:id="@+id/divider_vertical"
+        android:layout_width="@dimen/divider_height"
+        android:layout_height="0dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42" />
+
+    <!-- Guideline splitting the change table in half -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_table_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.21" />
+
+    <!-- ==================== CHANGE TABLE (LEFT SIDE) ==================== -->
+    <!-- Column 1: 500, 100, 50, 20 -->
+    <!-- Row 1: 500 -->
+    <TextView android:id="@+id/tv_note_500"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_500" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/tv_note_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_500" />
+    <TextView android:id="@+id/tv_count_500"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/tv_count_100"
+        app:layout_constraintStart_toEndOf="@id/tv_note_500"
+        app:layout_constraintEnd_toStartOf="@id/guideline_table_middle" />
+
+    <!-- Row 2: 100 -->
+    <TextView android:id="@+id/tv_note_100"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_100" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_note_500"
+        app:layout_constraintBottom_toTopOf="@id/tv_note_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_100" />
+    <TextView android:id="@+id/tv_count_100"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_count_500"
+        app:layout_constraintBottom_toTopOf="@id/tv_count_50"
+        app:layout_constraintStart_toEndOf="@id/tv_note_100"
+        app:layout_constraintEnd_toStartOf="@id/guideline_table_middle" />
+
+    <!-- Row 3: 50 -->
+    <TextView android:id="@+id/tv_note_50"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_50" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_note_100"
+        app:layout_constraintBottom_toTopOf="@id/tv_note_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_50" />
+    <TextView android:id="@+id/tv_count_50"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_count_100"
+        app:layout_constraintBottom_toTopOf="@id/tv_count_20"
+        app:layout_constraintStart_toEndOf="@id/tv_note_50"
+        app:layout_constraintEnd_toStartOf="@id/guideline_table_middle" />
+
+    <!-- Row 4: 20 -->
+    <TextView android:id="@+id/tv_note_20"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_20" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_note_50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_20" />
+    <TextView android:id="@+id/tv_count_20"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_count_50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_note_20"
+        app:layout_constraintEnd_toStartOf="@id/guideline_table_middle" />
+
+    <!-- Column 2: 10, 5, 2, 1 -->
+    <!-- Row 5: 10 -->
+    <TextView android:id="@+id/tv_note_10"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_10" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/tv_note_5"
+        app:layout_constraintStart_toEndOf="@id/guideline_table_middle"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_10" />
+    <TextView android:id="@+id/tv_count_10"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/tv_count_5"
+        app:layout_constraintStart_toEndOf="@id/tv_note_10"
+        app:layout_constraintEnd_toStartOf="@id/divider_vertical" />
+
+    <!-- Row 6: 5 -->
+    <TextView android:id="@+id/tv_note_5"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_5" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_note_10"
+        app:layout_constraintBottom_toTopOf="@id/tv_note_2"
+        app:layout_constraintStart_toEndOf="@id/guideline_table_middle"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_5" />
+    <TextView android:id="@+id/tv_count_5"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_count_10"
+        app:layout_constraintBottom_toTopOf="@id/tv_count_2"
+        app:layout_constraintStart_toEndOf="@id/tv_note_5"
+        app:layout_constraintEnd_toStartOf="@id/divider_vertical" />
+
+    <!-- Row 7: 2 -->
+    <TextView android:id="@+id/tv_note_2"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_2" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_note_5"
+        app:layout_constraintBottom_toTopOf="@id/tv_note_1"
+        app:layout_constraintStart_toEndOf="@id/guideline_table_middle"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_2" />
+    <TextView android:id="@+id/tv_count_2"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_count_5"
+        app:layout_constraintBottom_toTopOf="@id/tv_count_1"
+        app:layout_constraintStart_toEndOf="@id/tv_note_2"
+        app:layout_constraintEnd_toStartOf="@id/divider_vertical" />
+
+    <!-- Row 8: 1 -->
+    <TextView android:id="@+id/tv_note_1"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/note_1" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_note_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_table_middle"
+        app:layout_constraintEnd_toStartOf="@id/tv_count_1" />
+    <TextView android:id="@+id/tv_count_1"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="0" android:textColor="@color/text_primary"
+        android:textSize="@dimen/table_row_text_size" android:gravity="center"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tv_count_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_note_1"
+        app:layout_constraintEnd_toStartOf="@id/divider_vertical" />
+
+
+    <!-- ==================== NUMERIC KEYPAD (RIGHT SIDE) ==================== -->
+    <!-- Row 1: 1, 2, 3, 4 -->
+    <Button android:id="@+id/btn_1"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_1"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/btn_5"
+        app:layout_constraintStart_toEndOf="@id/divider_vertical"
+        app:layout_constraintEnd_toStartOf="@id/btn_2" />
+    <Button android:id="@+id/btn_2"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_2"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/btn_6"
+        app:layout_constraintStart_toEndOf="@id/btn_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_3" />
+    <Button android:id="@+id/btn_3"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_3"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/btn_7"
+        app:layout_constraintStart_toEndOf="@id/btn_2"
+        app:layout_constraintEnd_toStartOf="@id/btn_4" />
+    <Button android:id="@+id/btn_4"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_4"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/btn_8"
+        app:layout_constraintStart_toEndOf="@id/btn_3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Row 2: 5, 6, 7, 8 -->
+    <Button android:id="@+id/btn_5"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_5"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/btn_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_9"
+        app:layout_constraintStart_toEndOf="@id/divider_vertical"
+        app:layout_constraintEnd_toStartOf="@id/btn_6" />
+    <Button android:id="@+id/btn_6"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_6"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/btn_2"
+        app:layout_constraintBottom_toTopOf="@id/btn_0"
+        app:layout_constraintStart_toEndOf="@id/btn_5"
+        app:layout_constraintEnd_toStartOf="@id/btn_7" />
+    <Button android:id="@+id/btn_7"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_7"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/btn_3"
+        app:layout_constraintBottom_toTopOf="@id/btn_clear"
+        app:layout_constraintStart_toEndOf="@id/btn_6"
+        app:layout_constraintEnd_toStartOf="@id/btn_8" />
+    <Button android:id="@+id/btn_8"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_8"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/btn_4"
+        app:layout_constraintBottom_toTopOf="@id/btn_clear"
+        app:layout_constraintStart_toEndOf="@id/btn_7"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Row 3: 9, 0, CLEAR -->
+    <Button android:id="@+id/btn_9"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_9"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/btn_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider_vertical"
+        app:layout_constraintEnd_toStartOf="@id/btn_0" />
+    <Button android:id="@+id/btn_0"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/digit_0"
+        android:textSize="@dimen/keypad_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_normal"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/btn_6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_9"
+        app:layout_constraintEnd_toStartOf="@id/btn_clear" />
+    <Button android:id="@+id/btn_clear"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:text="@string/btn_clear"
+        android:textSize="@dimen/keypad_clear_text_size"
+        android:textColor="@color/text_primary"
+        android:backgroundTint="@color/btn_clear"
+        android:stateListAnimator="@null"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_constraintTop_toBottomOf="@id/btn_7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btn_7"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

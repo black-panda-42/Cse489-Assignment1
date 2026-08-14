@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Taka symbol (৳) styled as a simple T with a horizontal stroke -->
+    <path
+        android:fillColor="#F5C518"
+        android:pathData="M34,30 L74,30 L74,38 L56,38 L56,78 L52,78 L52,38 L34,38 Z" />
+    <path
+        android:fillColor="#F5C518"
+        android:pathData="M38,52 L70,52 L70,58 L38,58 Z" />
+</vector>

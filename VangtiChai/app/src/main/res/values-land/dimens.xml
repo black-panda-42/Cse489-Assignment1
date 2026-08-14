@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dimension overrides for phone LANDSCAPE orientation.
+    Smaller vertical space means tighter padding/margins.
+-->
+<resources>
+    <!-- Screen padding -->
+    <dimen name="screen_padding">6dp</dimen>
+
+    <!-- Amount display (smaller in landscape to save vertical space) -->
+    <dimen name="amount_label_size">16sp</dimen>
+    <dimen name="amount_value_size">22sp</dimen>
+    <dimen name="amount_padding_end">6dp</dimen>
+
+    <!-- Dividers -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin_top">2dp</dimen>
+
+    <!-- Change table -->
+    <dimen name="table_header_size">11sp</dimen>
+    <dimen name="table_header_padding_v">2dp</dimen>
+    <dimen name="table_row_text_size">12sp</dimen>
+
+    <!-- Keypad buttons -->
+    <dimen name="keypad_text_size">15sp</dimen>
+    <dimen name="keypad_clear_text_size">11sp</dimen>
+    <dimen name="btn_margin">2dp</dimen>
+</resources>

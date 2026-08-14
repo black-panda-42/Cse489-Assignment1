@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dimension overrides for sw600dp tablets in LANDSCAPE.
+    Wide screen: generous horizontal space, slightly smaller than portrait tablet due to less vertical room.
+-->
+<resources>
+    <!-- Screen padding -->
+    <dimen name="screen_padding">14dp</dimen>
+
+    <!-- Amount display -->
+    <dimen name="amount_label_size">24sp</dimen>
+    <dimen name="amount_value_size">34sp</dimen>
+    <dimen name="amount_padding_end">14dp</dimen>
+
+    <!-- Dividers -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin_top">6dp</dimen>
+
+    <!-- Change table -->
+    <dimen name="table_header_size">16sp</dimen>
+    <dimen name="table_header_padding_v">6dp</dimen>
+    <dimen name="table_row_text_size">17sp</dimen>
+
+    <!-- Keypad buttons -->
+    <dimen name="keypad_text_size">24sp</dimen>
+    <dimen name="keypad_clear_text_size">18sp</dimen>
+    <dimen name="btn_margin">5dp</dimen>
+</resources>
